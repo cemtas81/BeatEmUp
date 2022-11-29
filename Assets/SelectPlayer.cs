@@ -8,7 +8,6 @@ public class SelectPlayer : MonoBehaviour
     public Animator ani1;
     public Animator ani2;
     public Animator ani3;
-    
     public void Update()
     {
        
@@ -24,14 +23,13 @@ public class SelectPlayer : MonoBehaviour
                     PlayerPrefs.SetInt("player", 1);
                     ani1.SetTrigger("select");
                     StartCoroutine(level());
-                    Debug.Log("1");
+
                 }
                 if (raycastHit.collider.CompareTag("Respawn"))
                 {
                     PlayerPrefs.SetInt("player", 2);
                     ani2.SetTrigger("select");
                     StartCoroutine(level());
-                    Debug.Log("2");
                 }
 
                 if (raycastHit.collider.CompareTag("Player"))
@@ -39,12 +37,10 @@ public class SelectPlayer : MonoBehaviour
                     PlayerPrefs.SetInt("player", 3);
                     ani3.SetTrigger("select");
                     StartCoroutine(level());
-                    Debug.Log("3");
                 }
             }
         }
     }
-    
     private IEnumerator level()
     {
       
